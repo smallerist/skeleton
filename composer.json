@@ -1,0 +1,54 @@
+{
+  "name": "smallerid/skeleton",
+  "description": "mini skeleton for php project with docker integration",
+  "keywords": [
+    "skeleton",
+    "php",
+    "template",
+    "small",
+    "smaller"
+  ],
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "purwanto",
+      "email": "purwanto@smaller.id"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.1"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "phpunit/phpunit": "^9.5"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "mkdir src && mkdir tests"
+    ],
+    "post-package-install": [
+      "composer dumpautoload -o"
+    ],
+    "post-package-uninstall": [
+      "composer dumpautoload -o"
+    ],
+    "post-package-update": [
+      "composer dumpautoload -o"
+    ]
+  }
+}

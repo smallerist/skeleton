@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  local-app:
+    image: purwantogz/php:8.1-phpunit
+    environment:
+      TZ: "Asia/Jakarta"
+      ENV_TYPE: "developer"
+      XDEBUG_SESSION: "smallerid-xdebug-session"
+      XDEBUG_ENABLE: "true"
+      XDEBUG_AUTOSTART: "true"
+      XDEBUG_CLIENT_HOST: "192.168.99.2"
+      XDEBUG_CLIENT_PORT: "9001"
+      XDEBUG_START_REQUEST: "yes"
+      PHP_IDE_CONFIG: "serverName=localhost.smaller.id"
+    volumes:
+      - .:/var/www:delegated
+      - ~/.composer/cache:/root/.composer/cache:delegated
+      - ./conf_environment_docker.php:/usr/local/lib/php/conf_environment_docker.php
+    networks:
+      - developer
+
+networks:
+  developer:
+    attachable: true
