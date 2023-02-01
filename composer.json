@@ -41,9 +41,6 @@
     "post-create-project-cmd": [
       "mkdir src && mkdir tests",
       "composer install"
-    ],
-    "post-package-install": [
-      "composer dumpautoload -o"
     ]
   }
 }
