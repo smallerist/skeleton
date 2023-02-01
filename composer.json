@@ -39,15 +39,10 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "mkdir src && mkdir tests"
+      "mkdir src && mkdir tests",
+      "composer install"
     ],
     "post-package-install": [
-      "composer dumpautoload -o"
-    ],
-    "post-package-uninstall": [
-      "composer dumpautoload -o"
-    ],
-    "post-package-update": [
       "composer dumpautoload -o"
     ]
   }
